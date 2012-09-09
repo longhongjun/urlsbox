@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+	<style>
+		body{background: url(img/bg-body.jpg); font: menu;}
+		#main{border-radius:20px; width:800px; margin:30px auto; padding:5px 20px; border:#DDD solid 1px; background:#FFF url(img/48.png) 20px 15px no-repeat; box-shadow:0 0 10px #CCC;}
+		h1{padding-left:60px;}
+		hr{ border:solid #CCC 1px; border-top:0;}
+		.paragraph{margin-bottom:50px; margin-left:20px;}
+		input[type=text],input[type=password]{color:#333; font-size:16px; border:solid #ccc 1px; width:250px; height:32px; line-height:32px;}
+		form button.css3{padding:8px 20px; font-size:14px;}
+		.form-field{margin-top:10px;}
+		#loading{display:none}
+		.hidden{display:none}
+        .complete{font-size:14px; color:#333;}
+            .complete img{vertical-align:text-bottom;}
+        .logout-tips{ color:red; padding:0 10px;}
+        #urls li{line-height:1.8}
+	</style>
+	<script src="jQuery-1.8.1.min.js"></script>
+	<script src="options.js"></script>
+</head>
+<link rel="stylesheet" href="all.css" />
+<body>
+	<div id="main">
+		<h1>设置网址收纳盒</h1>
+		<hr />
+		<div class="paragraph login-form">
+			<h2>登录同步的熊猫创意帐号<a target="_blank" href="http://www.pandaidea.com/user/register" style="margin-left:10px;">快速注册</a></h2>
+			<p>
+				<form name="login">
+				<div class="form-field">邮箱：<input type="text" name="mail" /></div>
+				<div class="form-field">密码：<input type="password" name="password" /></div>
+				<div class="form-field" style="margin-left:37px;"><img id="loading" src="img/loading.gif" /><button id="save" class="css3">保存</button> <span class="tips"></span></div>
+				</form>
+			</p>
+		</div>
+		<div class="paragraph logged-in hidden">
+			<h2><span id="nickname"></span>,您已登录</h2>
+			<p class="complete"><img src="img/check.png" />所有数据均已同步完毕。 <a href="http://urls.pandaidea.com" target="_blank">&gt;&gt;查看同步后的数据</a></p>
+            <div class="syncing hidden">
+                <h3>等待同步的网址：</h3>
+                <ul id="urls"></ul>
+            </div>
+            <p><button id="logout" class="css3">注销登录</button><span class="logout-tips hidden">注销登录会导致未同步的数据丢失。</span></p>
+		</div>
+	</div>
+</body>
+</html>
